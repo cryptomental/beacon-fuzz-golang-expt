@@ -1,10 +1,14 @@
 load("@io_bazel_rules_go//go:def.bzl", "go_binary")
 load("@com_github_atlassian_bazel_tools//gotemplate:def.bzl", "gotemplate")
+load(":def.bzl", "hello_ctx")
 
 go_binary(
     name = "hello",
-    srcs = ["hello.go"],
+    srcs = [":hello.go"],
 )
+
+
+hello_ctx(name="ctx.yaml")
 
 gotemplate(
     name = "hello.go",
