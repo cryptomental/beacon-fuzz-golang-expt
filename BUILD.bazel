@@ -13,7 +13,7 @@ hello_ctx(name="ctx.yaml")
 gotemplate(
     name = "hello.go",
     yaml_contexts = {
-        "ctx.yaml": "Name",
+        ":ctx.yaml": "Ctx",
     },
     template = "hello.template",
 )
